@@ -2,3 +2,9 @@ damage-prediction/training/dataset/
 archive.zip
 damage-prediction/.DS_Store
 .DS_Store
+.venv/
+damage-prediction/training/yolo_dataset/
+damage-prediction/training/yolo_runs/
+*.pt
+*.onnx
+runs/
