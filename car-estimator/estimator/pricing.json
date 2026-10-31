@@ -1,0 +1,48 @@
+{
+  "_note": "Indicative 2026 INR prices for a hatchback (segment multiplier 1.0). These are placeholders to be validated against OEM price lists / local workshop quotes before any real use.",
+  "currency": "INR",
+  "segments": {
+    "hatchback": 1.0,
+    "sedan": 1.35,
+    "suv": 1.8,
+    "luxury": 4.0
+  },
+  "labour_rate_per_hour": {
+    "tier1": 650,
+    "tier2": 500,
+    "tier3": 400
+  },
+  "paint_per_panel": 2800,
+  "paint_material_share": 0.25,
+  "gst": {
+    "_note": "Verify current GST slabs for auto parts and workshop services.",
+    "parts": 0.18,
+    "labour": 0.18,
+    "paint": 0.18
+  },
+  "parts": {
+    "front_bumper":     {"material": "plastic",    "replace": 4500,  "repair": 1500, "labour_hours": {"replace": 1.5, "repair": 2.0}, "painted": true},
+    "grille":           {"material": "plastic",    "replace": 1800,  "repair": null, "labour_hours": {"replace": 0.5}, "painted": false},
+    "headlamp":         {"material": "plastic",    "replace": 4000,  "repair": null, "labour_hours": {"replace": 0.7}, "painted": false},
+    "bonnet":           {"material": "metal",      "replace": 7500,  "repair": 0,    "labour_hours": {"replace": 1.0, "repair": 4.0}, "painted": true},
+    "fender":           {"material": "metal",      "replace": 3500,  "repair": 0,    "labour_hours": {"replace": 1.5, "repair": 3.0}, "painted": true},
+    "radiator":         {"material": "metal",      "replace": 6000,  "repair": null, "labour_hours": {"replace": 2.0}, "painted": false},
+    "radiator_support": {"material": "metal",      "replace": 3500,  "repair": 0,    "labour_hours": {"replace": 3.0, "repair": 3.0}, "painted": true},
+    "windshield":       {"material": "glass",      "replace": 6500,  "repair": null, "labour_hours": {"replace": 1.5}, "painted": false},
+    "rear_bumper":      {"material": "plastic",    "replace": 4500,  "repair": 1500, "labour_hours": {"replace": 1.5, "repair": 2.0}, "painted": true},
+    "tail_lamp":        {"material": "plastic",    "replace": 2200,  "repair": null, "labour_hours": {"replace": 0.5}, "painted": false},
+    "boot_lid":         {"material": "metal",      "replace": 8000,  "repair": 0,    "labour_hours": {"replace": 1.0, "repair": 4.0}, "painted": true},
+    "rear_panel":       {"material": "metal",      "replace": 5000,  "repair": 0,    "labour_hours": {"replace": 4.0, "repair": 4.0}, "painted": true},
+    "rear_glass":       {"material": "glass",      "replace": 4500,  "repair": null, "labour_hours": {"replace": 1.5}, "painted": false},
+    "tyre":             {"material": "rubber",     "replace": 4000,  "repair": 300,  "labour_hours": {"replace": 0.3, "repair": 0.3}, "painted": false},
+    "wheel":            {"material": "metal",      "replace": 6000,  "repair": 1500, "labour_hours": {"replace": 0.5, "repair": 0.5}, "painted": false},
+    "front_door":       {"material": "metal",      "replace": 12000, "repair": 0,    "labour_hours": {"replace": 3.0, "repair": 4.0}, "painted": true},
+    "back_door":        {"material": "metal",      "replace": 11000, "repair": 0,    "labour_hours": {"replace": 3.0, "repair": 4.0}, "painted": true},
+    "door_glass":       {"material": "glass",      "replace": 2500,  "repair": null, "labour_hours": {"replace": 1.0}, "painted": false},
+    "mirror":           {"material": "plastic",    "replace": 3000,  "repair": null, "labour_hours": {"replace": 0.5}, "painted": false},
+    "quarter_panel":    {"material": "metal",      "replace": 9000,  "repair": 0,    "labour_hours": {"replace": 6.0, "repair": 4.0}, "painted": true},
+    "rocker_panel":     {"material": "metal",      "replace": 3500,  "repair": 0,    "labour_hours": {"replace": 4.0, "repair": 3.0}, "painted": true},
+    "roof":             {"material": "metal",      "replace": 15000, "repair": 0,    "labour_hours": {"replace": 8.0, "repair": 5.0}, "painted": true},
+    "license_plate":    {"material": "metal",      "replace": 600,   "repair": null, "labour_hours": {"replace": 0.2}, "painted": false}
+  }
+}

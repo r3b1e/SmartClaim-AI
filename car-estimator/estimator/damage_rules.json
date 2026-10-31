@@ -1,0 +1,275 @@
+{
+  "_note": "Maps damage evidence to repair line items. Without a damage model the 'low'/'high' plans come from classifier_scenarios. With one, 'low' covers only the detected damage and 'high' adds the classifier's 'high' plan for the detected severity.",
+  "classifier_scenarios": {
+    "F_Breakage": {
+      "low": [
+        [
+          "front_bumper",
+          "repair"
+        ]
+      ],
+      "high": [
+        [
+          "front_bumper",
+          "replace"
+        ],
+        [
+          "headlamp",
+          "replace"
+        ],
+        [
+          "grille",
+          "replace"
+        ]
+      ]
+    },
+    "F_Crushed": {
+      "low": [
+        [
+          "front_bumper",
+          "replace"
+        ],
+        [
+          "grille",
+          "replace"
+        ],
+        [
+          "headlamp",
+          "replace"
+        ],
+        [
+          "bonnet",
+          "repair"
+        ]
+      ],
+      "high": [
+        [
+          "front_bumper",
+          "replace"
+        ],
+        [
+          "grille",
+          "replace"
+        ],
+        [
+          "headlamp",
+          "replace"
+        ],
+        [
+          "bonnet",
+          "replace"
+        ],
+        [
+          "radiator",
+          "replace"
+        ],
+        [
+          "radiator_support",
+          "replace"
+        ],
+        [
+          "fender",
+          "repair"
+        ]
+      ]
+    },
+    "R_Breakage": {
+      "low": [
+        [
+          "rear_bumper",
+          "repair"
+        ]
+      ],
+      "high": [
+        [
+          "rear_bumper",
+          "replace"
+        ],
+        [
+          "tail_lamp",
+          "replace"
+        ]
+      ]
+    },
+    "R_Crushed": {
+      "low": [
+        [
+          "rear_bumper",
+          "replace"
+        ],
+        [
+          "tail_lamp",
+          "replace"
+        ],
+        [
+          "boot_lid",
+          "repair"
+        ]
+      ],
+      "high": [
+        [
+          "rear_bumper",
+          "replace"
+        ],
+        [
+          "tail_lamp",
+          "replace"
+        ],
+        [
+          "boot_lid",
+          "replace"
+        ],
+        [
+          "rear_panel",
+          "replace"
+        ]
+      ]
+    }
+  },
+  "part_classes": {
+    "_note": "Part-segmentation class -> priced part.",
+    "front_bumper": "front_bumper",
+    "back_bumper": "rear_bumper",
+    "grille": "grille",
+    "headlight": "headlamp",
+    "tail_light": "tail_lamp",
+    "hood": "bonnet",
+    "trunk": "boot_lid",
+    "fender": "fender",
+    "quarter_panel": "quarter_panel",
+    "rocker_panel": "rocker_panel",
+    "roof": "roof",
+    "front_door": "front_door",
+    "back_door": "back_door",
+    "front_window": "door_glass",
+    "back_window": "door_glass",
+    "windshield": "windshield",
+    "back_windshield": "rear_glass",
+    "mirror": "mirror",
+    "front_wheel": "wheel",
+    "back_wheel": "wheel",
+    "license_plate": "license_plate"
+  },
+  "zone_counterparts": {
+    "_note": "Front/rear look-alike parts. When the part model and the front/rear classifier disagree, the classifier's zone wins.",
+    "F": {
+      "rear_bumper": "front_bumper",
+      "tail_lamp": "headlamp",
+      "boot_lid": "bonnet",
+      "rear_glass": "windshield"
+    },
+    "R": {
+      "front_bumper": "rear_bumper",
+      "headlamp": "tail_lamp",
+      "bonnet": "boot_lid",
+      "windshield": "rear_glass"
+    }
+  },
+  "zone_parts": {
+    "_note": "Fallback part per damage type when no part model is available or no part overlaps the damage (F = front, R = rear).",
+    "dent": {
+      "F": "bonnet",
+      "R": "boot_lid"
+    },
+    "corrosion": {
+      "F": "bonnet",
+      "R": "boot_lid"
+    },
+    "scratch": {
+      "F": "front_bumper",
+      "R": "rear_bumper"
+    },
+    "paint_chip": {
+      "F": "front_bumper",
+      "R": "rear_bumper"
+    },
+    "flaking": {
+      "F": "front_bumper",
+      "R": "rear_bumper"
+    },
+    "crack": {
+      "F": "front_bumper",
+      "R": "rear_bumper"
+    },
+    "cracked": {
+      "F": "front_bumper",
+      "R": "rear_bumper"
+    },
+    "broken_part": {
+      "F": "front_bumper",
+      "R": "rear_bumper"
+    },
+    "missing_part": {
+      "F": "front_bumper",
+      "R": "rear_bumper"
+    },
+    "glass_shatter": {
+      "F": "windshield",
+      "R": "rear_glass"
+    },
+    "lamp_broken": {
+      "F": "headlamp",
+      "R": "tail_lamp"
+    },
+    "tire_flat": {
+      "F": "tyre",
+      "R": "tyre"
+    }
+  },
+  "damage_actions": {
+    "_note": "[low, high] action per damage type. 'paint' = refinish only (skipped on unpainted parts such as glass and lamps).",
+    "dent": [
+      "repair",
+      "repair"
+    ],
+    "corrosion": [
+      "repair",
+      "replace"
+    ],
+    "scratch": [
+      "paint",
+      "paint"
+    ],
+    "paint_chip": [
+      "paint",
+      "paint"
+    ],
+    "flaking": [
+      "paint",
+      "paint"
+    ],
+    "crack": [
+      "repair",
+      "replace"
+    ],
+    "cracked": [
+      "repair",
+      "replace"
+    ],
+    "broken_part": [
+      "replace",
+      "replace"
+    ],
+    "missing_part": [
+      "replace",
+      "replace"
+    ],
+    "glass_shatter": [
+      "replace",
+      "replace"
+    ],
+    "lamp_broken": [
+      "replace",
+      "replace"
+    ],
+    "tire_flat": [
+      "repair",
+      "replace"
+    ]
+  },
+  "large_dent": {
+    "_note": "Dents covering more than this share of their part (or of the image, when the part is unknown) are replaced in the high plan.",
+    "part_fraction": 0.3,
+    "image_fraction": 0.15
+  }
+}
