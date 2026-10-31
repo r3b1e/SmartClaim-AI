@@ -8,3 +8,22 @@ damage-prediction/training/yolo_runs/
 *.pt
 *.onnx
 runs/
+damage-type/training/cardd_yolo/
+__pycache__/
+.pytest_cache/
+damage-type/training/data/
+damage-type/training/parts_yolo/
+damage-type/training/damage_yolo/
+
+# reference / template files (not project output)
+DSL.pptx
+Mini project report format_first 3 pages 26-27.pages
+SkinSense_Report (1).pdf
+
+# Mac-only duplicate of the report (docx + pdf are kept)
+report/*.pages
+
+# tool caches
+.ipynb_checkpoints/
+.gradio/
+flagged/
